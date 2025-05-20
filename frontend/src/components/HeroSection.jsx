@@ -66,18 +66,19 @@ const HeroSection = () => {
           className='flex w-[40%] shadow-lg pl-3 rounded-full items-center gap-4 mx-auto'
           style={{ border: '1px solid #4F9CF9' }}
         >
-          <input
-            type="text"
-            placeholder='Find your dream jobs'
-            onChange={(e) => setQuery(e.target.value)}
-            className='outline-none border-none w-full bg-transparent text-black placeholder-black'
-          />
+    <input
+  type="text"
+  placeholder="Find your dream jobs"
+  onChange={(e) => setQuery(e.target.value)}
+  className="w-full py-2 px-4 !text-black placeholder-black bg-transparent focus:outline-none"
+/>
+
           <Button
             onClick={searchJobHandler}
             className="rounded-r-full"
             style={{ backgroundColor: '#4F9CF9' }}
           >
-            <Search className='h-5 w-5 text-white' />
+            <Search className='h-5 w-5 text-black' />
           </Button>
         </div>
       </div>
