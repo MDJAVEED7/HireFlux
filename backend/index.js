@@ -26,11 +26,25 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // CORS setup
+// CORS setup
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://hireflux.onrender.com'
+];
+
 const corsOptions = {
-    origin: 'http://localhost:5173',
-    credentials: true,
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
 };
+
 app.use(cors(corsOptions));
+
 
 // Routes
 app.use("/api/v1/user", userRoute);
