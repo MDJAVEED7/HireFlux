@@ -70,7 +70,7 @@ const HeroSection = () => {
             type="text"
             placeholder='Find your dream jobs'
             onChange={(e) => setQuery(e.target.value)}
-            className='outline-none border-none w-full bg-transparent text-white placeholder-black'
+            className='outline-none border-none w-full bg-transparent text-black placeholder-black'
           />
           <Button
             onClick={searchJobHandler}
